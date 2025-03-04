@@ -143,8 +143,8 @@ class _MyHomePageState extends State<MyHomePage> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Bookings',
+            icon: Icon(Icons.apartment),
+            label: 'Locations',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),

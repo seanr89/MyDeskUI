@@ -18,16 +18,67 @@ class APIService {
     }
   }
 
-  // Future<void> fetchUsers() async {
-  //   final url = 'https://jsonplaceholder.typicode.com/users'; // Sample API
-  //   final response = await http.get(Uri.parse(url)); // Send GET request
-  //   if (response.statusCode == 200) {
-  //     // If the server returns a successful response, parse the JSON
-  //     var data = jsonDecode(response.body); // Decode the response body
-  //     print(data); // Just printing the data for now
-  //   } else {
-  //     // If the request failed, throw an error
-  //     throw Exception('Failed to load users');
-  //   }
-  // }
+  Future<void> getLocations() async {
+    print('Getting Locations');
+    const url =
+        'https://seatapi.greenglacier-b4a0e83d.northeurope.azurecontainerapps.io/locations'; // Sample API
+    final response = await http.get(Uri.parse(url)); // Send GET request
+    if (response.statusCode == 200) {
+      // If the server returns a successful response, parse the JSON
+      //var data = jsonDecode(response.body); // Decode the response body
+      print(response.body); // Just printing the data for now
+    } else {
+      print('Connection Failed');
+      // If the request failed, throw an error
+      throw Exception('Failed to load locations');
+    }
+  }
+
+  Future<void> getLocationDesks(int locationId) async {
+    print('Getting Desks');
+    String url =
+        'https://seatapi.greenglacier-b4a0e83d.northeurope.azurecontainerapps.io/locations/$locationId/seats'; // Sample API
+    final response = await http.get(Uri.parse(url)); // Send GET request
+    if (response.statusCode == 200) {
+      // If the server returns a successful response, parse the JSON
+      //var data = jsonDecode(response.body); // Decode the response body
+      print(response.body); // Just printing the data for now
+    } else {
+      print('Connection Failed');
+      // If the request failed, throw an error
+      throw Exception('Failed to load seats');
+    }
+  }
+
+  Future<void> getAllDesks() async {
+    print('Getting Desks');
+    const url =
+        'https://seatapi.greenglacier-b4a0e83d.northeurope.azurecontainerapps.io/seats'; // Sample API
+    final response = await http.get(Uri.parse(url)); // Send GET request
+    if (response.statusCode == 200) {
+      // If the server returns a successful response, parse the JSON
+      //var data = jsonDecode(response.body); // Decode the response body
+      print(response.body); // Just printing the data for now
+    } else {
+      print('Connection Failed');
+      // If the request failed, throw an error
+      throw Exception('Failed to load seats');
+    }
+  }
+
+  Future<void> getAllBookings() async {
+    print('Getting Bookings');
+    const url =
+        'https://seatapi.greenglacier-b4a0e83d.northeurope.azurecontainerapps.io/bookings'; // Sample API
+    final response = await http.get(Uri.parse(url)); // Send GET request
+    if (response.statusCode == 200) {
+      // If the server returns a successful response, parse the JSON
+      //var data = jsonDecode(response.body); // Decode the response body
+      print(response.body); // Just printing the data for now
+    } else {
+      print('Connection Failed');
+      // If the request failed, throw an error
+      throw Exception('Failed to load bookings');
+    }
+  }
 }
