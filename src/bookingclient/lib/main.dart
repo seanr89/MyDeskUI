@@ -1,3 +1,4 @@
+import 'package:bookingclient/services/api.service.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -49,6 +50,21 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  String _health = '';
+
+  APIService apiService = APIService();
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  Future<void> _fetchData() async {
+    await apiService.checkHealth();
+    setState(() {
+      _health = 'Connection Successful';
+    });
+  }
 
   void _incrementCounter() {
     setState(() {
@@ -102,11 +118,15 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
+            Text(
+              '$_health',
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: _fetchData,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
