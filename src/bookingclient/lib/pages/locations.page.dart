@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
 
-class LocationPage extends StatefulWidget {
-  const LocationPage({super.key});
+class LocationsPage extends StatefulWidget {
+  const LocationsPage({super.key});
 
   @override
-  State<LocationPage> createState() => _LocationPageState();
+  State<LocationsPage> createState() => _LocationsPageState();
 }
 
-class _LocationPageState extends State<LocationPage> {
+class _LocationsPageState extends State<LocationsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Locations Page'),
+        title: const Text('Locations Page'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: const <Widget>[
             Text(
-              'TODO here',
+              'Locations Page',
             ),
           ],
         ),

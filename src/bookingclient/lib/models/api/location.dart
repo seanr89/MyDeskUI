@@ -1,4 +1,4 @@
-import 'package:bookingclient/models/desk.dart';
+import 'package:bookingclient/models/api/desk.dart';
 
 class Location {
   int? id;
