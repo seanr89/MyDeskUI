@@ -1,6 +1,9 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert'; // To decode the JSON response
 
+/// The [APIService] class is used to make API calls to the server.
+/// It contains methods to check the health of the server, get locations,
+/// get location desks, get all desks, and get all bookings.
 class APIService {
   Future<void> checkHealth() async {
     print('CheckingConnectiobn');

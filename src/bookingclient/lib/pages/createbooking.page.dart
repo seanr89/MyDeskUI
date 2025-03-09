@@ -5,7 +5,7 @@ class CreateBooking extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Create Booking'),
+        title: const Text('Create Booking'),
       ),
       body: Center(
         child: Text('Create your booking here!'),

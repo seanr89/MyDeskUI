@@ -12,11 +12,15 @@ enum AppRoute {
   home,
   settings,
   locations,
-  search,
+  bookings,
 }
 
 final _rootNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'root');
 
+/// The global [GoRouter] instance.
+/// This is used to navigate to different pages in the app.
+/// It is used in the [LayoutScaffold] to navigate to different pages.
+/// It is also used in the [AppShell] to navigate to different pages.
 final goRouter =
     GoRouter(navigatorKey: _rootNavigatorKey, initialLocation: "/", routes: [
   StatefulShellRoute.indexedStack(

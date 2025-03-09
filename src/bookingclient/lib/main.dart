@@ -8,6 +8,10 @@ void main() {
   runApp(const MyApp());
 }
 
+/// The main application widget.
+/// This widget is the root of the application.
+/// It is responsible for setting up the application's theme and routing.
+/// The application's theme is set to dark mode.
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 

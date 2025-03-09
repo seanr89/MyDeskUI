@@ -5,6 +5,8 @@ import 'package:go_router/go_router.dart';
 
 import '../models/destination.dart';
 
+/// A stateful widget that manages the navigation state of the app.
+/// Supports the navigation of the app to different branches.
 class LayoutScaffold extends StatelessWidget {
   const LayoutScaffold({required this.navigationShell, super.key});
 
