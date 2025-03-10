@@ -7,15 +7,28 @@ class LocationDetail extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         margin: const EdgeInsets.all(10),
-        height: 150,
-        child: Stack(children: [
-          Positioned.fill(
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(10),
-              child:
-                  Image.asset('assets/images/location.jpg', fit: BoxFit.cover),
+        height: 175,
+        width: double.infinity,
+        child: Column(
+          //mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Container(
+              height: 150,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                image: const DecorationImage(
+                  image: AssetImage('assets/images/office.jpg'),
+                  fit: BoxFit.cover,
+                ),
+              ),
             ),
-          ),
-        ]));
+            Container(
+              alignment: Alignment.centerLeft,
+              child: const Text('Location 1',
+                  textAlign: TextAlign.left, style: TextStyle(fontSize: 20)),
+            ),
+          ],
+        ));
   }
 }

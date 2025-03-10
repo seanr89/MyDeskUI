@@ -1,4 +1,5 @@
 import 'package:bookingclient/services/mockapi.service.dart';
+import 'package:bookingclient/widgets/location.detail.dart';
 import 'package:flutter/material.dart';
 
 class LocationsPage extends StatefulWidget {
@@ -25,11 +26,16 @@ class _LocationsPageState extends State<LocationsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Locations Page'),
+        title: const Text('Locations'),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
-            Navigator.pop(context);
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text('Back events'),
+              ),
+            );
+            //Navigator.pop(context);
           },
         ),
       ),
@@ -37,30 +43,19 @@ class _LocationsPageState extends State<LocationsPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'Locations Page',
-            ),
             ListView(
               shrinkWrap: true,
               children: const <Widget>[
-                Center(
-                  child: Text('Locations'),
-                ),
-                ListTile(
-                  title: Text('Location 1'),
-                ),
-                ListTile(
-                  title: Text('Location 2'),
-                ),
-                ListTile(
-                  title: Text('Location 3'),
-                ),
-                ListTile(
-                  title: Text('Location 4'),
-                ),
-                ListTile(
-                  title: Text('Location 5'),
-                ),
+                LocationDetail(),
+                Center(child: LocationDetail()),
+                // Center(child: LocationDetail()),
+                // Center(child: LocationDetail()),
+                // ListTile(
+                //   title: Text('Location 1'),
+                // ),
+                // ListTile(
+                //   title: Text('Location 2'),
+                // ),
               ],
             ),
           ],
@@ -68,10 +63,15 @@ class _LocationsPageState extends State<LocationsPage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.pop(context);
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text('Back button clicked??'),
+            ),
+          );
+          //Navigator.pop(context);
         },
-        tooltip: 'Back',
-        child: const Icon(Icons.arrow_back),
+        tooltip: 'Create',
+        child: const Icon(Icons.add),
       ),
     );
   }
