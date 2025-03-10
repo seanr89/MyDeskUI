@@ -1,8 +1,5 @@
-import 'package:bookingclient/pages/home.page.dart';
-import 'package:bookingclient/services/api.service.dart';
 import 'package:bookingclient/utils/app_router.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 void main() {
   runApp(const MyApp());

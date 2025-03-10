@@ -25,54 +25,64 @@ class _LocationsPageState extends State<LocationsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Locations'),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () {
-            ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(
-                content: Text('Back events'),
-              ),
-            );
-            //Navigator.pop(context);
-          },
+        appBar: AppBar(
+          title: const Text('Locations'),
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back),
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                  content: Text('Back events'),
+                ),
+              );
+              //Navigator.pop(context);
+            },
+          ),
         ),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            ListView(
-              shrinkWrap: true,
-              children: const <Widget>[
-                LocationDetail(),
-                Center(child: LocationDetail()),
-                // Center(child: LocationDetail()),
-                // Center(child: LocationDetail()),
-                // ListTile(
-                //   title: Text('Location 1'),
-                // ),
-                // ListTile(
-                //   title: Text('Location 2'),
-                // ),
+        body: Center(
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                ListView(
+                  shrinkWrap: true,
+                  padding: const EdgeInsets.all(10),
+                  children: const <Widget>[
+                    LocationDetail(),
+                    LocationDetail(),
+                    LocationDetail(),
+                    LocationDetail(),
+                  ],
+                ),
               ],
             ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-              content: Text('Back button clicked??'),
-            ),
-          );
-          //Navigator.pop(context);
-        },
-        tooltip: 'Create',
-        child: const Icon(Icons.add),
-      ),
-    );
+          ),
+        )
+        //   child: Column(
+        //     mainAxisAlignment: MainAxisAlignment.center,
+        //     children: <Widget>[
+        //       ListView(
+        //         shrinkWrap: true,
+        //         children: const <Widget>[
+        //           LocationDetail(),
+        //           Center(child: LocationDetail()),
+        //         ],
+        //       ),
+        //     ],
+        //   ),
+        // ),
+        // floatingActionButton: FloatingActionButton(
+        //   onPressed: () {
+        //     ScaffoldMessenger.of(context).showSnackBar(
+        //       const SnackBar(
+        //         content: Text('Back button clicked??'),
+        //       ),
+        //     );
+        //     //Navigator.pop(context);
+        //   },
+        //   tooltip: 'Create',
+        //   child: const Icon(Icons.add),
+        // ),
+        );
   }
 }
