@@ -1,6 +1,7 @@
 import 'package:bookingclient/services/mockapi.service.dart';
 import 'package:bookingclient/widgets/location.detail.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class LocationsPage extends StatefulWidget {
   const LocationsPage({super.key});
@@ -27,17 +28,17 @@ class _LocationsPageState extends State<LocationsPage> {
     return Scaffold(
         appBar: AppBar(
           title: const Text('Locations'),
-          leading: IconButton(
-            icon: const Icon(Icons.arrow_back),
-            onPressed: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(
-                  content: Text('Back events'),
-                ),
-              );
-              //Navigator.pop(context);
-            },
-          ),
+          // leading: IconButton(
+          //   icon: const Icon(Icons.arrow_back),
+          //   onPressed: () {
+          //     // ScaffoldMessenger.of(context).showSnackBar(
+          //     //   const SnackBar(
+          //     //     content: Text('Back events'),
+          //     //   ),
+          //     // );
+          //     context.pop();
+          //   },
+          // ),
         ),
         body: Center(
           child: SingleChildScrollView(
@@ -58,19 +59,6 @@ class _LocationsPageState extends State<LocationsPage> {
             ),
           ),
         )
-        //   child: Column(
-        //     mainAxisAlignment: MainAxisAlignment.center,
-        //     children: <Widget>[
-        //       ListView(
-        //         shrinkWrap: true,
-        //         children: const <Widget>[
-        //           LocationDetail(),
-        //           Center(child: LocationDetail()),
-        //         ],
-        //       ),
-        //     ],
-        //   ),
-        // ),
         // floatingActionButton: FloatingActionButton(
         //   onPressed: () {
         //     ScaffoldMessenger.of(context).showSnackBar(
