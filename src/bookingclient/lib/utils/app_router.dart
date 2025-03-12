@@ -7,11 +7,13 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../pages/home.page.dart';
+import '../pages/locationdetail.page.dart';
 
 enum AppRoute {
   home,
   settings,
   locations,
+  locationdetails,
   bookings,
 }
 
@@ -40,7 +42,13 @@ final goRouter =
               name: AppRoute.locations.name,
               builder: (context, state) {
                 return const LocationsPage();
-              })
+              }),
+          GoRoute(
+              path: '/location/id',
+              name: AppRoute.locationdetails.name,
+              builder: (context, state) {
+                return const LocationDetailPage();
+              }),
         ]),
         StatefulShellBranch(routes: [
           GoRoute(

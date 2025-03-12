@@ -1,5 +1,5 @@
 import 'package:bookingclient/services/mockapi.service.dart';
-import 'package:bookingclient/widgets/location.detail.dart';
+import 'package:bookingclient/widgets/location.listview.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -49,10 +49,10 @@ class _LocationsPageState extends State<LocationsPage> {
                   shrinkWrap: true,
                   padding: const EdgeInsets.all(10),
                   children: const <Widget>[
-                    LocationDetail(),
-                    LocationDetail(),
-                    LocationDetail(),
-                    LocationDetail(),
+                    LocationListView(),
+                    LocationListView(),
+                    LocationListView(),
+                    LocationListView(),
                   ],
                 ),
               ],
