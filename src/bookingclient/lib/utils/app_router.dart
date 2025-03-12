@@ -44,10 +44,12 @@ final goRouter =
                 return const LocationsPage();
               }),
           GoRoute(
-              path: '/location/id',
+              path: '/location/:id',
               name: AppRoute.locationdetails.name,
               builder: (context, state) {
-                return const LocationDetailPage();
+                final id = int.parse(state.pathParameters[
+                    "id"]!); // Get "id" param from URL and cast to int
+                return LocationDetailPage(id: id);
               }),
         ]),
         StatefulShellBranch(routes: [
