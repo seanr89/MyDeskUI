@@ -41,7 +41,7 @@ final goRouter =
               path: '/locations',
               name: AppRoute.locations.name,
               builder: (context, state) {
-                return const LocationsPage();
+                return LocationsPage();
               }),
           GoRoute(
               path: '/location/:id',

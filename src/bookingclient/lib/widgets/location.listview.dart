@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
+import '../models/api/location.dart';
 
 class LocationListView extends StatelessWidget {
-  const LocationListView({super.key});
+  final Location location;
+  const LocationListView({super.key, required this.location});
 
   @override
   Widget build(BuildContext context) {
     return Container(
         margin: const EdgeInsets.all(10),
-        height: 175,
+        height: 225,
         width: double.infinity,
         child: Column(
           //mainAxisAlignment: MainAxisAlignment.start,
@@ -25,7 +27,7 @@ class LocationListView extends StatelessWidget {
             ),
             Container(
               alignment: Alignment.centerLeft,
-              child: const Text('Location 1',
+              child: Text(location.name,
                   textAlign: TextAlign.left, style: TextStyle(fontSize: 20)),
             ),
             Container(
@@ -41,13 +43,13 @@ class LocationListView extends StatelessWidget {
                         MaterialStateProperty.all<Color>(Colors.blue),
                   ),
                   onPressed: () {
-                    //Navigator.pushNamed(context, '/locationdetail');
-                    print('navigated to location detail');
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(
-                        content: Text('Navigated to location detail'),
-                      ),
-                    );
+                    Navigator.pushNamed(context, '/location/1');
+                    // print('navigated to location detail');
+                    // ScaffoldMessenger.of(context).showSnackBar(
+                    //   const SnackBar(
+                    //     content: Text('Navigated to location detail'),
+                    //   ),
+                    // );
                   },
                   child: Text('TextButton'),
                 ))

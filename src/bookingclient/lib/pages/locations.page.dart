@@ -1,21 +1,29 @@
+import 'package:bookingclient/models/api/location.dart';
 import 'package:bookingclient/services/mockapi.service.dart';
 import 'package:bookingclient/widgets/location.listview.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class LocationsPage extends StatefulWidget {
-  const LocationsPage({super.key});
-
+  LocationsPage({super.key});
   static MockAPIService apiService = MockAPIService();
+
+  List<Location> dataSet = [];
 
   @override
   State<LocationsPage> createState() => _LocationsPageState();
 }
 
 class _LocationsPageState extends State<LocationsPage> {
+  @override
+  void initState() {
+    super.initState();
+    widget.dataSet = LocationsPage.apiService.getLocations();
+  }
+
   navigateToLocationCreate() {
     //Navigator.pushNamed(context, '/locationcreate');
-    print('navigated to location create');
+    //print('navigated to location create');
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(
         content: Text('Navigated to location create'),
@@ -48,11 +56,10 @@ class _LocationsPageState extends State<LocationsPage> {
                 ListView(
                   shrinkWrap: true,
                   padding: const EdgeInsets.all(10),
-                  children: const <Widget>[
-                    LocationListView(),
-                    LocationListView(),
-                    LocationListView(),
-                    LocationListView(),
+                  children: <Widget>[
+                    LocationListView(location: widget.dataSet[0]),
+                    LocationListView(location: widget.dataSet[1]),
+                    LocationListView(location: widget.dataSet[2]),
                   ],
                 ),
               ],
