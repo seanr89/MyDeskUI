@@ -52,6 +52,16 @@ final goRouter =
                 return LocationDetailPage(id: id);
               }),
         ]),
+        // StatefulShellBranch(routes: [
+        //   GoRoute(
+        //       path: '/location/:id',
+        //       name: AppRoute.locationdetails.name,
+        //       builder: (context, state) {
+        //         final id = int.parse(state.pathParameters[
+        //             "id"]!); // Get "id" param from URL and cast to int
+        //         return LocationDetailPage(id: id);
+        //     }),
+        // ]),
         StatefulShellBranch(routes: [
           GoRoute(
               path: '/settings',

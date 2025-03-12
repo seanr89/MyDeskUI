@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import '../models/api/location.dart';
 
 class LocationListView extends StatelessWidget {
@@ -43,7 +44,8 @@ class LocationListView extends StatelessWidget {
                         MaterialStateProperty.all<Color>(Colors.blue),
                   ),
                   onPressed: () {
-                    Navigator.pushNamed(context, '/location/1');
+                    GoRouter.of(context).go('/location/1');
+                    //Navigator.pushNamed(context, '/location/1');
                     // print('navigated to location detail');
                     // ScaffoldMessenger.of(context).showSnackBar(
                     //   const SnackBar(
