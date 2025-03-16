@@ -42,6 +42,23 @@ class _LocationDetailPageState extends State<LocationDetailPage> {
         children: [
           Text('Location Details'),
           Text('Location ID: ${widget.id}'),
+          //TODO we want a list here!
+          SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                ListView(
+                  shrinkWrap: true,
+                  padding: const EdgeInsets.all(10),
+                  children: <Widget>[
+                    Placeholder(),
+                    Placeholder(),
+                    Placeholder(),
+                  ],
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
