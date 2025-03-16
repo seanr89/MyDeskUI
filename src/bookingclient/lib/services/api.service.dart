@@ -37,6 +37,22 @@ class APIService {
     }
   }
 
+  Future<void> getLocation(int id) async {
+    print('Getting Location');
+    String url =
+        'https://seatapi.greenglacier-b4a0e83d.northeurope.azurecontainerapps.io/locations/$id'; // Sample API
+    final response = await http.get(Uri.parse(url)); // Send GET request
+    if (response.statusCode == 200) {
+      // If the server returns a successful response, parse the JSON
+      //var data = jsonDecode(response.body); // Decode the response body
+      print(response.body); // Just printing the data for now
+    } else {
+      print('Connection Failed');
+      // If the request failed, throw an error
+      throw Exception('Failed to load location');
+    }
+  }
+
   Future<void> getLocationDesks(int locationId) async {
     print('Getting Desks');
     String url =

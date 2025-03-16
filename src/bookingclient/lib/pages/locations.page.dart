@@ -22,8 +22,6 @@ class _LocationsPageState extends State<LocationsPage> {
   }
 
   navigateToLocationCreate() {
-    //Navigator.pushNamed(context, '/locationcreate');
-    //print('navigated to location create');
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(
         content: Text('Navigated to location create'),

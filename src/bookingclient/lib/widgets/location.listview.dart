@@ -44,7 +44,7 @@ class LocationListView extends StatelessWidget {
                         MaterialStateProperty.all<Color>(Colors.blue),
                   ),
                   onPressed: () {
-                    GoRouter.of(context).go('/location/1');
+                    GoRouter.of(context).push('/location/1');
                     //Navigator.pushNamed(context, '/location/1');
                     // print('navigated to location detail');
                     // ScaffoldMessenger.of(context).showSnackBar(
@@ -53,7 +53,7 @@ class LocationListView extends StatelessWidget {
                     //   ),
                     // );
                   },
-                  child: Text('TextButton'),
+                  child: Text('Details'),
                 ))
           ],
         ));
