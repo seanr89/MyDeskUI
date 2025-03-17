@@ -1,3 +1,4 @@
+import 'package:bookingclient/widgets/desk.listview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -40,9 +41,8 @@ class _LocationDetailPageState extends State<LocationDetailPage> {
       ),
       body: Row(
         children: [
-          Text('Location Details'),
+          const Text('Location Details'),
           Text('Location ID: ${widget.id}'),
-          //TODO we want a list here!
           SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -50,10 +50,10 @@ class _LocationDetailPageState extends State<LocationDetailPage> {
                 ListView(
                   shrinkWrap: true,
                   padding: const EdgeInsets.all(10),
-                  children: <Widget>[
-                    Placeholder(),
-                    Placeholder(),
-                    Placeholder(),
+                  children: const <Widget>[
+                    DeskListView(),
+                    DeskListView(),
+                    DeskListView(),
                   ],
                 ),
               ],
